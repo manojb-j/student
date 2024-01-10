@@ -1,0 +1,47 @@
+/* App.css */
+.popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-main {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+/* table, th, td {
+    border: 1px solid black;
+  border-collapse: collapse;
+  } */
+
+.Pagination button.active {
+  border-color: rgb(221, 86, 86);
+}
+
+.Pagination button{
+  border-color: rgb(221, 86, 86);
+  width: "100px";
+}
+
+.table-stu {
+  /* background-color: rgb(219, 136, 34); */
+  width: "50%";
+  height: "700px";
+  padding-top: "10px";
+}
