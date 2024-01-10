@@ -1,10 +1,9 @@
-// ChartComponent.js
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 import { StudentList } from './data';
 
 const Charts = () => {
-    // Extract data for chart
+    
     const categories = StudentList.map(student => student.name);
     const scoresData = StudentList.map(student => student.score);
     const cData = StudentList.map(student => student.country);

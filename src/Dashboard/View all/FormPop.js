@@ -8,10 +8,10 @@ const FormPopup = ({ handleClose, show, children }) => {
             <div className="d-flex align-items-center justify-content-center vh-100">
                 <section className="popup-main container-fluid p-4"
                 style={{ 
-                    background: 'rgba(255, 255, 255, 0.6)', // Translucent white background
-                    backdropFilter: 'blur(5px)', // Adjust the blur amount as needed
-                    borderRadius: '10px', // Rounded corners for the glassmorphism effect
-                    padding: '20px', // Optional padding
+                    background: 'rgba(255, 255, 255, 0.6)', 
+                    backdropFilter: 'blur(5px)', 
+                    borderRadius: '10px', 
+                    padding: '20px', 
                     width:"40%",
                     height:"80%"
                   }}

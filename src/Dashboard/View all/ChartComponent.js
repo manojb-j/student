@@ -1,4 +1,3 @@
-// ChartComponent.js
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 import { StudentList } from './data';

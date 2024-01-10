@@ -32,7 +32,7 @@ function Pagination({ totalRows, rowsPerPage, setCurrentPage, CurrentPage }) {
                                 height: "30px",
                                 borderRadius: "5px",
                                 border: "white",
-                                backgroundColor: page === CurrentPage ? "#f55151" : "skyblue", // Conditional background color
+                                backgroundColor: page === CurrentPage ? "#f55151" : "skyblue", 
                                 marginRight: "1%"
                             }}
                         >

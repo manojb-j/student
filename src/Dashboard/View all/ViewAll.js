@@ -1,4 +1,3 @@
-// StudentList.js
 import React, { useState } from 'react';
 import "./style.css"
 import Pagination from './Pagination';
@@ -10,6 +9,7 @@ const ViewAll = ({ Students, handleDelete, handleEdit }) => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [rowsPerPage, setrowsPerPage] = useState(7);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const lastPageIndex = currentPage * rowsPerPage;
     const firstPageIndex = lastPageIndex - rowsPerPage;
@@ -20,8 +20,22 @@ const ViewAll = ({ Students, handleDelete, handleEdit }) => {
     console.log(lastPageIndex)
     console.log(CurrentStudentData)
 
+    const filteredStudents = Students.filter(student =>
+        student.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    const currentStudentData = filteredStudents.slice(firstPageIndex, lastPageIndex);
+
     return (
         <div >
+            <div className="form-control" id="exampleFormControlInput1">
+                <input
+                    type="text"
+                    placeholder="Search by name..."
+                    value={searchTerm}
+                    className="form-control" id="exampleFormControlInput1" 
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
+            </div>
             <div className="d-flex align-items-center justify-content-center table-stu">
                 <table style={{ width: "100%" }} className="table">
                     <thead className='table-dark'>
@@ -38,7 +52,7 @@ const ViewAll = ({ Students, handleDelete, handleEdit }) => {
                         </tr>
                     </thead>
                     <tbody >
-                        {CurrentStudentData.map(Student => (
+                        {currentStudentData.map(Student => (
                             <tr key={Student.id} >
                                 <td><CgProfile /></td>
                                 <td>{Student.name}</td>
@@ -61,7 +75,7 @@ const ViewAll = ({ Students, handleDelete, handleEdit }) => {
                     </tbody>
                 </table>
             </div>
-            <Pagination totalRows={Students.length} rowsPerPage={rowsPerPage} setCurrentPage={setCurrentPage} CurrentPage={currentPage} />
+            <Pagination totalRows={filteredStudents.length} rowsPerPage={rowsPerPage} setCurrentPage={setCurrentPage} CurrentPage={currentPage} />
         </div>
     );
 };
